@@ -1,0 +1,29 @@
+# Hostname and domain
+myhostname = mail-bibans.bibans.mail
+mydomain = bibans.mail
+myorigin = $mydomain
+
+# Interfaces and protocols
+inet_interfaces = 100.108.71.105
+inet_protocols = ipv4
+
+# Destination for local delivery
+mydestination = $myhostname, localhost.$mydomain, localhost, $mydomain
+
+# Networks allowed to relay
+mynetworks = 127.0.0.0/8, 100.108.71.0/24
+
+# Mailbox format
+home_mailbox = Maildir/
+
+# TLS (optional for now)
+smtpd_tls_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem
+smtpd_tls_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
+smtpd_tls_security_level=may
+smtp_tls_CApath=/etc/ssl/certs
+smtp_tls_security_level=may
+smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
+
+# Relay rules
+smtpd_relay_restrictions = permit_mynetworks permit_sasl_authenticated defer_unauth_destination
+

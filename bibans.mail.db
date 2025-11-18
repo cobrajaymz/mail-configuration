@@ -1,0 +1,12 @@
+$TTL 604800
+@       IN      SOA     mail-bibans.bibans.mail. admin.bibans.mail. (
+                              2025111801 ; Serial
+                              604800     ; Refresh
+                              86400      ; Retry
+                              2419200    ; Expire
+                              604800 )   ; Negative Cache TTL
+;
+@       IN      NS      mail-bibans.bibans.mail.
+mail-bibans IN     A       100.108.71.105
+@       IN      MX 10   mail-bibans.bibans.mail.
+
